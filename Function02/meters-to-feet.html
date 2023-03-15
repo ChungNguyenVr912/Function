@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Feet - meters:</h1>
+    <p>Type a value in the field to convert the value:</p>
+    <p>
+        <label for="inputFeet">Feet: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input id="inputFeet" type="number" placeholder="Feet" oninput="metersConvert(this.value)"
+            onchange="metersConvert(this.value)">
+    </p>
+    <p>Meters: <span id="outputMeters"></span></p>
+    <p>
+        <label for="inputMeters">Meters:&nbsp;</label>
+        <input id="inputMeters" type="number" placeholder="Meters" oninput="feetConvert(this.value)"
+            onchange="feetConvert(this.value)">
+    </p>
+    <p>Feet: <span id="outputFeet"></span></p>
+    <script>
+        function metersConvert(feet){
+            document.getElementById('outputMeters').innerHTML = 0.305 * feet;
+        }
+        function feetConvert(meters){
+            document.getElementById('outputFeet').innerHTML = 3.279 * meters;
+        }
+    </script>
+</body>
+</html>
