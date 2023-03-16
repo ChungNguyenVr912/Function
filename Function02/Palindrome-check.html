@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = prompt('Nhap vao chuoi ky tu').split('');
+        function palindromeCheck(arr){
+            if(arr.length == 1){
+                return true;
+            }else if(arr.length ==2 && arr[0] == arr[1]){
+                return true;
+            }else if(arr[0] == arr[arr.length -1]){
+                arr.pop();
+                arr.shift();
+                return palindromeCheck(arr);
+            }
+            return false;
+        }
+        if(palindromeCheck(arr)){
+            alert('Chuoi vua nhap la chuoi Palindrome');
+        }else{
+            alert('Chuoi vua nhap khong phai la chuoi Palindrome');
+        }
+    </script>
+</body>
+</html>
