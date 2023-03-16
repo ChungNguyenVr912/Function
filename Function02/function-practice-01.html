@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="BT1" onclick="showAlert()">Bai 1</button><br>
+    <p>Bai 2 </p><input type="number" onchange="BT2(this.value)" oninput="BT2(this.value)">
+    <p>Ket qua: <span id="showres2"></span></p><br>
+    <button id="BT3" onclick="BT3()">Bai 3</button> Num 1 <input type="number" id="num1"> Num 2 <input type="number"
+        id="num2"><br>
+    <button id="BT4" onclick="BT4()">Bai 4</button><br>
+    <button id="BT5" onclick="BT5()">Bai 5</button><br>
+
+    <script>
+        //Bai 1
+        function showAlert() {
+            alert('Xin chao');
+        }
+
+        //Bai 2
+        function BT2(number) {
+            number = Number(number) + 1;
+            document.getElementById('showres2').innerHTML = number;
+        }
+
+        //Bai 3
+        function BT3() {
+            let a = document.getElementById('num1').value;
+            let b = document.getElementById('num2').value;
+            alert(PRT3(a, b));
+            function PRT3(a, b) {
+                if (a <= b) {
+                    return Number(a) + Number(b);
+                }
+                return "Num1 > Num2";
+            }
+        }
+
+        //Bai 4
+        function BT4() {
+            function addNumbers() {
+                firstNum = 4;
+                secondNum = 8;
+                result = firstNum + secondNum;
+                return result;
+            }
+            result = 0;
+            alert(result);
+            result = addNumbers();
+            alert(result);
+        }
+
+        //Bai 5
+        function BT5() {
+            let star = prompt("Input star's name:");
+            alert(checkstar(star));
+            function checkstar(x) {
+                let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+                let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+                for(let i=0; i<star1.length; i++){
+                    if(x == star1[i]){
+                        return star2[i];
+                    }
+                }
+                return "Cant find star";
+            }
+        }
+    </script>
+</body>
+
+</html>
